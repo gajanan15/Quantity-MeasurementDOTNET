@@ -22,6 +22,16 @@ namespace QuantityMeasurement
         }
 
         /// <summary>
+        /// Parameter Constructor to Set Value.
+        /// </summary>
+        /// <param name="inch"></param>
+        /// <returns></returns>
+        public double ReturnInch(double inch)
+        {
+            return inch;
+        }
+
+        /// <summary>
         /// Overridding Equals Method.
         /// </summary>
         /// <param name="obj"></param>

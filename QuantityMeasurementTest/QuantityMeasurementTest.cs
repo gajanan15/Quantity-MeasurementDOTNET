@@ -88,5 +88,69 @@ namespace QuantityMeasurementTest
             double feet2 = this.quantityMeasurement.ReturnFeet(2.0);
             Assert.AreEqual(feet1, feet2);
         }
+
+        /// <summary>
+        /// Test Case 1.6 Given 0 Inch And 0 Inch Should Return Equal.
+        /// </summary>
+         [Test]
+         public void Given0InchAnd0Inch_IfEqual_ShouldReturnTrue()
+        {
+            double inch1 = this.quantityMeasurement.ReturnInch(0.0);
+            double inch2 = this.quantityMeasurement.ReturnInch(0.0);
+            Assert.AreEqual(inch1, inch2);
+        }
+
+        /// <summary>
+        /// Test Case 1.6 Given 0 Inch And 1 Inch Should Return NotEqual.
+        /// </summary>
+         [Test]
+         public void Given0InchAnd1Inch_IfNotEqual_ShouldReturnTrue()
+        {
+            double inch1 = this.quantityMeasurement.ReturnInch(0.0);
+            double inch2 = this.quantityMeasurement.ReturnInch(1.0);
+            Assert.AreNotEqual(inch1, inch2);
+        }
+
+        /// <summary>
+        /// Test Case 1.7 Given Null Values Should Return Equal.
+        /// </summary>
+         [Test]
+         public void GivenNullValueForInch_WhenChecked_ShouldReturnFalse()
+        {
+            bool equals = this.quantityMeasurement.Equals(null);
+            Assert.IsFalse(equals);
+        }
+
+        /// <summary>
+        /// Test Case 1.8 Given References Having Same Object Should Return Equal.
+        /// </summary>
+         [Test]
+         public void GivenReferenceForInch_WhenChecked_ShouldReturnTrue()
+        {
+            bool equals = this.quantityMeasurement.Equals(this.quantityMeasurement);
+            Assert.IsTrue(equals);
+        }
+
+        /// <summary>
+        /// Test Case 1.9 To Cehck Equal Type.
+        /// </summary>
+         [Test]
+         public void GivenTypeForInch_IfEqual_ShouldReturnTrue()
+        {
+            QuantityMeasurement.QuantityMeasurement quantity1 = new QuantityMeasurement.QuantityMeasurement();
+            QuantityMeasurement.QuantityMeasurement quantity2 = new QuantityMeasurement.QuantityMeasurement();
+            Assert.AreEqual(quantity1, quantity2);
+        }
+
+        /// <summary>
+        /// Test Case 1.10 To Check Values Are Equels.
+        /// </summary>
+         [Test]
+         public void GivenValueCheckForInch_IfEqual_ShouldReturnTrue()
+        {
+            double feet1 = this.quantityMeasurement.ReturnFeet(2.0);
+            double feet2 = this.quantityMeasurement.ReturnFeet(2.0);
+            Assert.AreEqual(feet1, feet2);
+        }
     }
 }
