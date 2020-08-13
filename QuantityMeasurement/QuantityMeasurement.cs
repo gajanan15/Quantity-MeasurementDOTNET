@@ -14,21 +14,11 @@ namespace QuantityMeasurement
         /// <summary>
         /// Parameter Constructor to Set Value.
         /// </summary>
-        /// <param name="feet"></param>
+        /// <param name="unit"></param>
         /// <returns></returns>
-        public double ReturnFeet(double feet)
+        public double ReturnUnits(double unit)
         {
-            return feet;
-        }
-
-        /// <summary>
-        /// Parameter Constructor to Set Value.
-        /// </summary>
-        /// <param name="inch"></param>
-        /// <returns></returns>
-        public double ReturnInch(double inch)
-        {
-            return inch;
+            return unit;
         }
 
         /// <summary>
