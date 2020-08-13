@@ -33,6 +33,11 @@ namespace QuantityMeasurement
                 return false;
             }
 
+            if (obj == this)
+            {
+                return true;
+            }
+
             return true;
         }
 

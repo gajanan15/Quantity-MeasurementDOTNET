@@ -56,5 +56,15 @@ namespace QuantityMeasurementTest
             bool equals = this.quantityMeasurement.Equals(null);
             Assert.IsFalse(equals);
         }
+
+        /// <summary>
+        /// Test Case 1.2 Given References Having Same Object Should Return Equal.
+        /// </summary>
+         [Test]
+         public void GivenReferenceForFeet_IfEqual_ShouldReturnTrue()
+        {
+            bool equals = this.quantityMeasurement.Equals(this.quantityMeasurement);
+            Assert.IsTrue(equals);
+        }
     }
 }
