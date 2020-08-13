@@ -1,31 +1,60 @@
-using NUnit.Framework;
+// <copyright file="QuantityMeasurementTest.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace QuantityMeasurementTest
 {
-    public class Tests
-    {
-         QuantityMeasurement.QuantityMeasurement quantityMeasurement;
+    using NUnit.Framework;
 
-        [SetUp]
-        public void Setup()
+    /// <summary>
+    /// Create Test Calss.
+    /// </summary>
+    public class QuantityMeasurementTest
+    {
+        /// <summary>
+        /// Creating Instance Of Main Class.
+        /// </summary>
+         private QuantityMeasurement.QuantityMeasurement quantityMeasurement;
+
+        /// <summary>
+        /// Craete SetUp Method.
+        /// </summary>
+         [SetUp]
+         public void Setup()
         {
-            quantityMeasurement = new QuantityMeasurement.QuantityMeasurement();
+            this.quantityMeasurement = new QuantityMeasurement.QuantityMeasurement();
         }
 
-        [Test]
-        public void Given0FeetAnd0Feet_IfEqual_ShouldReturnTrue()
+        /// <summary>
+        /// Test Case 1.1 Given 0 Feet And 0 Feet Should Return Equal.
+        /// </summary>
+         [Test]
+         public void Given0FeetAnd0Feet_IfEqual_ShouldReturnTrue()
         {
-            double feet1 = quantityMeasurement.ReturnFeet(0.0);
-            double feet2 = quantityMeasurement.ReturnFeet(0.0);
+            double feet1 = this.quantityMeasurement.ReturnFeet(0.0);
+            double feet2 = this.quantityMeasurement.ReturnFeet(0.0);
             Assert.AreEqual(feet1, feet2);
         }
 
-        [Test]
-        public void Given0FeetAnd1Feet_IfNotEqual_ShouldReturnTrue()
+        /// <summary>
+        /// Test Case 1.1 Given 0 Feet And 1 Feet Should Return NotEqual.
+        /// </summary>
+         [Test]
+         public void Given0FeetAnd1Feet_IfNotEqual_ShouldReturnTrue()
         {
-            double feet1 = quantityMeasurement.ReturnFeet(0.0);
-            double feet2 = quantityMeasurement.ReturnFeet(1.0);
+            double feet1 = this.quantityMeasurement.ReturnFeet(0.0);
+            double feet2 = this.quantityMeasurement.ReturnFeet(1.0);
             Assert.AreNotEqual(feet1, feet2);
+        }
+
+        /// <summary>
+        /// Test Case 1.2 Given Null Values Should Return Equal.
+        /// </summary>
+         [Test]
+         public void GivenNullValueForFeet_IfEqual_ShouldReturnFalse()
+        {
+            bool equals = this.quantityMeasurement.Equals(null);
+            Assert.IsFalse(equals);
         }
     }
 }
