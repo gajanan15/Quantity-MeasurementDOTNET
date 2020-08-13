@@ -38,6 +38,11 @@ namespace QuantityMeasurement
                 return true;
             }
 
+            if (obj is QuantityMeasurement)
+            {
+                return true;
+            }
+
             return true;
         }
 
