@@ -77,5 +77,16 @@ namespace QuantityMeasurementTest
             QuantityMeasurement.QuantityMeasurement quantity2 = new QuantityMeasurement.QuantityMeasurement();
             Assert.AreEqual(quantity1, quantity2);
         }
+
+        /// <summary>
+        /// Test Case 1.5 To Check Values Are Equels.
+        /// </summary>
+         [Test]
+         public void GivenValueCheck_IfEqual_ShouldReturnTrue()
+        {
+            double feet1 = this.quantityMeasurement.ReturnFeet(2.0);
+            double feet2 = this.quantityMeasurement.ReturnFeet(2.0);
+            Assert.AreEqual(feet1, feet2);
+        }
     }
 }
