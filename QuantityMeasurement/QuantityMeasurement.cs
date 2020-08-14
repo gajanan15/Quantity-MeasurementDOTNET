@@ -14,11 +14,12 @@ namespace QuantityMeasurement
         /// <summary>
         /// Parameter Constructor to Set Value.
         /// </summary>
+        /// <param name="type"></param>
         /// <param name="unit"></param>
         /// <returns></returns>
-        public double ReturnUnits(double unit)
+        public double ReturnUnits(LengthTypeEnum.LengthType type, double unit)
         {
-            return unit;
+            return unit * new LengthTypeEnum().Conversion(type);
         }
 
         /// <summary>

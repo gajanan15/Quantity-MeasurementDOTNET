@@ -25,14 +25,16 @@ namespace QuantityMeasurementTest
             this.quantityMeasurement = new QuantityMeasurement.QuantityMeasurement();
         }
 
+        // ************************************************FEET*******************************************************
+
         /// <summary>
         /// Test Case 1.1 Given 0 Feet And 0 Feet Should Return Equal.
         /// </summary>
          [Test]
          public void Given0FeetAnd0Feet_IfEqual_ShouldReturnTrue()
         {
-            double feet1 = this.quantityMeasurement.ReturnUnits(0.0);
-            double feet2 = this.quantityMeasurement.ReturnUnits(0.0);
+            double feet1 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 0.0);
+            double feet2 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 0.0);
             Assert.AreEqual(feet1, feet2);
         }
 
@@ -42,8 +44,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void Given0FeetAnd1Feet_IfNotEqual_ShouldReturnTrue()
         {
-            double feet1 = this.quantityMeasurement.ReturnUnits(0.0);
-            double feet2 = this.quantityMeasurement.ReturnUnits(1.0);
+            double feet1 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 0.0);
+            double feet2 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
             Assert.AreNotEqual(feet1, feet2);
         }
 
@@ -84,10 +86,12 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenValueCheck_IfEqual_ShouldReturnTrue()
         {
-            double feet1 = this.quantityMeasurement.ReturnUnits(2.0);
-            double feet2 = this.quantityMeasurement.ReturnUnits(2.0);
+            double feet1 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 2.0);
+            double feet2 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 2.0);
             Assert.AreEqual(feet1, feet2);
         }
+
+        // ************************************************INCH*******************************************************
 
         /// <summary>
         /// Test Case 1.6 Given 0 Inch And 0 Inch Should Return Equal.
@@ -95,8 +99,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void Given0InchAnd0Inch_IfEqual_ShouldReturnTrue()
         {
-            double inch1 = this.quantityMeasurement.ReturnUnits(0.0);
-            double inch2 = this.quantityMeasurement.ReturnUnits(0.0);
+            double inch1 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 0.0);
+            double inch2 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 0.0);
             Assert.AreEqual(inch1, inch2);
         }
 
@@ -106,8 +110,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void Given0InchAnd1Inch_IfNotEqual_ShouldReturnTrue()
         {
-            double inch1 = this.quantityMeasurement.ReturnUnits(0.0);
-            double inch2 = this.quantityMeasurement.ReturnUnits(1.0);
+            double inch1 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 0.0);
+            double inch2 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 1.0);
             Assert.AreNotEqual(inch1, inch2);
         }
 
@@ -148,9 +152,20 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenValueCheckForInch_IfEqual_ShouldReturnTrue()
         {
-            double feet1 = this.quantityMeasurement.ReturnUnits(2.0);
-            double feet2 = this.quantityMeasurement.ReturnUnits(2.0);
+            double feet1 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
+            double feet2 = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
             Assert.AreEqual(feet1, feet2);
+        }
+
+        /// <summary>
+        /// Test Case 1.11 To Check Given 0 Feet and 0 Inch Should Return equal.
+        /// </summary>
+         [Test]
+         public void Given0FeetAnd0Inch_IfEquals_ShouldReturnTrue()
+        {
+            double feet = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 0.0);
+            double inch = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 0.0);
+            Assert.AreEqual(feet, inch);
         }
     }
 }
