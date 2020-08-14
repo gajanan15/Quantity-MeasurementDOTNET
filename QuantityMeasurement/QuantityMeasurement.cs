@@ -17,9 +17,9 @@ namespace QuantityMeasurement
         /// <param name="type"></param>
         /// <param name="unit"></param>
         /// <returns></returns>
-        public double ReturnUnits(LengthTypeEnum.LengthType type, double unit)
+        public double ReturnUnits(UnitTypeEnum.UnitType type, double unit)
         {
-            return unit * new LengthTypeEnum().Conversion(type);
+            return unit * new UnitTypeEnum().Conversion(type);
         }
 
         /// <summary>

@@ -17,6 +17,8 @@ namespace QuantityMeasurementTest
          private QuantityMeasurement.QuantityMeasurement quantityMeasurement;
          private double inchOne;
          private double inchTwo;
+         private double millilitreOne;
+         private double millilitreTwo;
 
         /// <summary>
         /// Craete SetUp Method.
@@ -35,8 +37,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenZeroFeetAndZeroFeet_IfEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 0.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 0.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 0.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 0.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -46,8 +48,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenZeroFeetAndOneFeet_IfNotEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 0.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 0.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
             Assert.AreNotEqual(this.inchOne, this.inchTwo);
         }
 
@@ -86,8 +88,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenValueCheck_IfEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 2.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 2.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 2.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 2.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -99,8 +101,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenZeroInchAndZeroInch_IfEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 0.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 0.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 0.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 0.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -110,8 +112,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenZeroInchAndOneInch_IfNotEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 0.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 0.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 1.0);
             Assert.AreNotEqual(this.inchOne, this.inchTwo);
         }
 
@@ -150,8 +152,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenValueCheckForInch_IfEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -161,8 +163,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenZeroFeetAndZeroInch_IfEquals_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 0.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 0.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 0.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 0.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -172,8 +174,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneFeetAndOneInch_IfNotEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 1.0);
             Assert.AreNotEqual(this.inchOne, this.inchTwo);
         }
 
@@ -183,8 +185,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneInchAndOneFeet_IfNotEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 1.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
             Assert.AreNotEqual(this.inchOne, this.inchTwo);
         }
 
@@ -194,8 +196,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneFeetAndTwelveInch_IfEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 12.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 12.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -205,8 +207,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenTwelveInchAndOneFeet_IfEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 12.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 12.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -218,8 +220,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenZeroFeetAndZeroYard_WhenEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 0.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 0.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 0.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.YARD, 0.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -229,8 +231,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneFeetAndZeroYard_WhenNotEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 0.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.YARD, 0.0);
             Assert.AreNotEqual(this.inchOne, this.inchTwo);
         }
 
@@ -240,8 +242,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenThreeFeetAndOneYard_WhenEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 3.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 3.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.YARD, 1.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -251,8 +253,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneFeetAndOneYard_WhenNotEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.YARD, 1.0);
             Assert.AreNotEqual(this.inchOne, this.inchTwo);
         }
 
@@ -262,8 +264,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneInchAndOneYard_WhenNotEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 1.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.YARD, 1.0);
             Assert.AreNotEqual(this.inchOne, this.inchTwo);
         }
 
@@ -273,8 +275,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneYardAndThirtySixInch_WhenEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 1.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 36.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.YARD, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 36.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -284,8 +286,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenThirtySixInchAndOneYard_WhenEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 36.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 36.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.YARD, 1.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -295,8 +297,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneYardAndThreeFeet_WhenEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 1.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 3.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.YARD, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 3.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -308,8 +310,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenZeroCentimeterAndZeroCentimeter_IfEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 0.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 0.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.CENTIMETER, 0.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.CENTIMETER, 0.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -319,8 +321,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenZeroCentimeterAndOneInch_IfNotEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 0.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.CENTIMETER, 0.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 1.0);
             Assert.AreNotEqual(this.inchOne, this.inchTwo);
         }
 
@@ -330,8 +332,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenTwoInchAndFiveCentimeter_IfEqual_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 5.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.CENTIMETER, 5.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
 
@@ -343,7 +345,7 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenTwoInchAndTwoInch_WhenEqualToFourInch_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
             Assert.AreEqual(4.0d, this.inchOne + this.inchOne);
         }
 
@@ -353,8 +355,8 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneFeetAndTwoInch_WhenEqualToFourteenInch_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
             Assert.AreEqual(14.0d, this.inchOne + this.inchTwo);
         }
 
@@ -364,7 +366,7 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneFeetAndOneFeet_WhenEqualToTwentyFourInch_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
             Assert.AreEqual(24.0d, this.inchOne + this.inchOne);
         }
 
@@ -374,9 +376,68 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenTwoInchAndTwoPointFiveCentimeter_WhenEqualToThreeInch_ShouldReturnTrue()
         {
-            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
-            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 2.5);
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.CENTIMETER, 2.5);
             Assert.AreEqual(3.0d, this.inchOne + this.inchTwo);
+        }
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++Volume+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // ************************************************Gallon*******************************************************
+
+        /// <summary>
+        /// Test Case 5.1 To Check Given Zero Gallon is Equal To Zero Gallon.
+        /// </summary>
+         [Test]
+         public void GivenZeroGallonAndZeroGallon_WhenEqual_ShouldReturnTrue()
+        {
+            this.millilitreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
+            this.millilitreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
+            Assert.AreEqual(this.millilitreOne, this.millilitreTwo);
+        }
+
+        /// <summary>
+        /// Test Case 5.2 To Check Given Zero Gallon is Equal To Zero Litre.
+        /// </summary>
+         [Test]
+         public void GivenZeroGallonAndZeroLitre_WhenEqual_ShouldReturnTrue()
+        {
+            this.millilitreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
+            this.millilitreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 0.0);
+            Assert.AreEqual(this.millilitreOne, this.millilitreTwo);
+        }
+
+        /// <summary>
+        /// Test Case 5.3 To Check Given Zero Gallon is Not Equal To One Litre.
+        /// </summary>
+         [Test]
+         public void GivenZeroGallonAndOneLitre_WhenNotEqual_ShouldReturnTrue()
+        {
+            this.millilitreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
+            this.millilitreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 1.0);
+            Assert.AreNotEqual(this.millilitreOne, this.millilitreTwo);
+        }
+
+        /// <summary>
+        /// Test Case 5.4 To Check Given One Gallon is Equal To Three point Seventy Eight Litre.
+        /// </summary>
+         [Test]
+         public void GivenOneGallonAndThreePoinSeventyEightLitre_WhenEqual_ShouldReturnTrue()
+        {
+            this.millilitreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 1.0);
+            this.millilitreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 3.785);
+            Assert.AreEqual(this.millilitreOne, this.millilitreTwo);
+        }
+
+        /// <summary>
+        /// Test Case 5.5 To Check Given One Litre is Equal To Thousand Millilitre.
+        /// </summary>
+         [Test]
+         public void GivenOneLitreAndThousandMillilitre_WhenEqual_ShouldReturnTrue()
+        {
+            this.millilitreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 1.0);
+            this.millilitreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.MILLILITRE, 1000.0);
+            Assert.AreEqual(this.millilitreOne, this.millilitreTwo);
         }
     }
 }

@@ -12,17 +12,20 @@ namespace QuantityMeasurement
     /// <summary>
     /// Craete Class.
     /// </summary>
-    public class LengthTypeEnum
+    public class UnitTypeEnum
     {
         /// <summary>
         /// Craete LengthType Enum.
         /// </summary>
-        public enum LengthType
+        public enum UnitType
         {
             FEET,
             INCHES,
             YARD,
-            CENTIMETER
+            CENTIMETER,
+            GALLON,
+            LITRE,
+            MILLILITRE
         }
 
         /// <summary>
@@ -30,21 +33,36 @@ namespace QuantityMeasurement
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public double Conversion(LengthType type)
+        public double Conversion(UnitType type)
         {
-            if (type.Equals(LengthType.FEET))
+            if (type.Equals(UnitType.FEET))
             {
                 return 1.0 * 12.0;
             }
 
-            if (type.Equals(LengthType.YARD))
+            if (type.Equals(UnitType.YARD))
             {
                 return 1 * 36.0;
             }
 
-            if (type.Equals(LengthType.CENTIMETER))
+            if (type.Equals(UnitType.CENTIMETER))
             {
                 return 1 / 2.5;
+            }
+
+            if (type.Equals(UnitType.GALLON))
+            {
+                return 1 * 3785;
+            }
+
+            if (type.Equals(UnitType.LITRE))
+            {
+                return 1 * 1000;
+            }
+
+            if (type.Equals(UnitType.MILLILITRE))
+            {
+                return 1.0;
             }
             else
             {
