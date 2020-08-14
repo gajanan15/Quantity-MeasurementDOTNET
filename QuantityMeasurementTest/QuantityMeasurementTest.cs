@@ -299,5 +299,40 @@ namespace QuantityMeasurementTest
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 3.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
+
+        // ************************************************CENTIMETER*******************************************************
+
+        /// <summary>
+        /// Test Case 3.1 To Check Given Zero Centimeter is equal To Zero Centimeter.
+        /// </summary>
+         [Test]
+         public void GivenZeroCentimeterAndZeroCentimeter_IfEqual_ShouldReturnTrue()
+        {
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 0.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 0.0);
+            Assert.AreEqual(this.inchOne, this.inchTwo);
+        }
+
+        /// <summary>
+        /// Test Case 3.2 To Check Given Zero Centimeter is Not Equal To One Inch.
+        /// </summary>
+         [Test]
+         public void GivenZeroCentimeterAndOneInch_IfNotEqual_ShouldReturnTrue()
+        {
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 0.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 1.0);
+            Assert.AreNotEqual(this.inchOne, this.inchTwo);
+        }
+
+        /// <summary>
+        /// Test Case 3.3 To Check Given Two Inch is Equal To Five Centimeter.
+        /// </summary>
+         [Test]
+         public void GivenTwoInchAndFiveCentimeter_IfEqual_ShouldReturnTrue()
+        {
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 5.0);
+            Assert.AreEqual(this.inchOne, this.inchTwo);
+        }
     }
 }

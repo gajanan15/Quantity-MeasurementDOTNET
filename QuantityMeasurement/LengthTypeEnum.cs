@@ -21,7 +21,8 @@ namespace QuantityMeasurement
         {
             FEET,
             INCHES,
-            YARD
+            YARD,
+            CENTIMETER
         }
 
         /// <summary>
@@ -39,6 +40,11 @@ namespace QuantityMeasurement
             if (type.Equals(LengthType.YARD))
             {
                 return 1 * 36.0;
+            }
+
+            if (type.Equals(LengthType.CENTIMETER))
+            {
+                return 1 / 2.5;
             }
             else
             {
