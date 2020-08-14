@@ -277,5 +277,16 @@ namespace QuantityMeasurementTest
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 36.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
+
+        /// <summary>
+        /// Test Case 2.6 To Check Given Thirty Six Inch is equal To One Yard.
+        /// </summary>
+         [Test]
+         public void GivenThirtySixInchAndOneYard_WhenEqual_ShouldReturnTrue()
+        {
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 36.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 1.0);
+            Assert.AreEqual(this.inchOne, this.inchTwo);
+        }
     }
 }
