@@ -20,7 +20,8 @@ namespace QuantityMeasurement
         public enum LengthType
         {
             FEET,
-            INCHES
+            INCHES,
+            YARD
         }
 
         /// <summary>
@@ -34,9 +35,14 @@ namespace QuantityMeasurement
             {
                 return 1.0 * 12.0;
             }
+
+            if (type.Equals(LengthType.YARD))
+            {
+                return 1 * 36.0;
+            }
             else
             {
-                return 1.0 / 12.0;
+                return 1.0;
             }
         }
     }
