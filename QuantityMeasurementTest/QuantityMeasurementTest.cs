@@ -244,5 +244,16 @@ namespace QuantityMeasurementTest
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 1.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
+
+        /// <summary>
+        /// Test Case 2.3 To Check Given One Feet is equal To One Yard.
+        /// </summary>
+         [Test]
+         public void GivenOneFeetAndOneYard_WhenNotEqual_ShouldReturnTrue()
+        {
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 1.0);
+            Assert.AreNotEqual(this.inchOne, this.inchTwo);
+        }
     }
 }
