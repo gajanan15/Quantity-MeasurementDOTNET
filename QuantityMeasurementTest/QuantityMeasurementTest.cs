@@ -55,8 +55,7 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenNullValueForFeet_IfEqual_ShouldReturnFalse()
         {
-            bool equals = this.quantityMeasurement.Equals(null);
-            Assert.IsFalse(equals);
+            Assert.IsFalse(this.quantityMeasurement.Equals(null));
         }
 
         /// <summary>
@@ -65,8 +64,7 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenReferenceForFeet_IfEqual_ShouldReturnTrue()
         {
-            bool equals = this.quantityMeasurement.Equals(this.quantityMeasurement);
-            Assert.IsTrue(equals);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement));
         }
 
         /// <summary>
@@ -121,8 +119,7 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenNullValueForInch_WhenChecked_ShouldReturnFalse()
         {
-            bool equals = this.quantityMeasurement.Equals(null);
-            Assert.IsFalse(equals);
+            Assert.IsFalse(this.quantityMeasurement.Equals(null));
         }
 
         /// <summary>
@@ -131,8 +128,7 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenReferenceForInch_WhenChecked_ShouldReturnTrue()
         {
-            bool equals = this.quantityMeasurement.Equals(this.quantityMeasurement);
-            Assert.IsTrue(equals);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement));
         }
 
         /// <summary>
@@ -166,6 +162,17 @@ namespace QuantityMeasurementTest
             double feet = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 0.0);
             double inch = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 0.0);
             Assert.AreEqual(feet, inch);
+        }
+
+        /// <summary>
+        /// Test Case 1.12 To Check Given 1 Feet and 1 Inch Are Not equal.
+        /// </summary>
+         [Test]
+         public void Given1FeetAnd1Inch_IfNotEqual_ShouldReturnTrue()
+        {
+            double feet = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
+            double inch = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 1.0);
+            Assert.AreNotEqual(feet, inch);
         }
     }
 }
