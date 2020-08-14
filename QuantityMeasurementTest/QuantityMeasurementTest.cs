@@ -174,5 +174,36 @@ namespace QuantityMeasurementTest
             double inch = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 1.0);
             Assert.AreNotEqual(feet, inch);
         }
+
+        /// <summary>
+        /// Test Case 1.13 To Check Given 1 Inch and 1 Feet Are Not equal.
+        /// </summary>
+         [Test]
+         public void Given1InchAnd1Feet_IfNotEqual_ShouldReturnTrue()
+        {
+            double inch = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 1.0);
+            double feet = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
+            Assert.AreNotEqual(inch, feet);
+        }
+
+        /// <summary>
+        /// Test Case 1.14 To Check Given 1 Feet is equal To 12 Inch.
+        /// </summary>
+         [Test]
+         public void Given1FeetAnd12Inch_IfEqual_ShouldReturnTrue()
+        {
+            double inch = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
+            Assert.AreEqual(12.0d, inch);
+        }
+
+        /// <summary>
+        /// Test Case 1.15 To Check Given 12 Inch is equal To 1 Feet.
+        /// </summary>
+         [Test]
+         public void Given12InchAnd1Feet_IfEqual_ShouldReturnTrue()
+        {
+            double feet = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 12.0);
+            Assert.AreEqual(1.0d, feet);
+        }
     }
 }
