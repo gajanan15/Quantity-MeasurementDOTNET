@@ -334,5 +334,49 @@ namespace QuantityMeasurementTest
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 5.0);
             Assert.AreEqual(this.inchOne, this.inchTwo);
         }
+
+        // ************************************************ADD TWO LENGTHS*******************************************************
+
+        /// <summary>
+        /// Test Case 4.1 Convert To Inch Two Inch And Two Inch Is Equal To Four Inch.
+        /// </summary>
+         [Test]
+         public void GivenTwoInchAndTwoInch_WhenEqualToFourInch_ShouldReturnTrue()
+        {
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
+            Assert.AreEqual(4.0d, this.inchOne + this.inchOne);
+        }
+
+        /// <summary>
+        /// Test Case 4.2 Convert To Inch One Feet And Two Inch Is Equal To Fourteen Inch.
+        /// </summary>
+         [Test]
+         public void GivenOneFeetAndTwoInch_WhenEqualToFourteenInch_ShouldReturnTrue()
+        {
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
+            Assert.AreEqual(14.0d, this.inchOne + this.inchTwo);
+        }
+
+        /// <summary>
+        /// Test Case 4.3 Convert To Inch One Feet And One Feet Is Equal To Twenty Four Inch.
+        /// </summary>
+         [Test]
+         public void GivenOneFeetAndOneFeet_WhenEqualToTwentyFourInch_ShouldReturnTrue()
+        {
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
+            Assert.AreEqual(24.0d, this.inchOne + this.inchOne);
+        }
+
+        /// <summary>
+        /// Test Case 4.3 Convert To Inch Two Inch And Two Point Five Centimeter Is Equal To Three Inch.
+        /// </summary>
+         [Test]
+         public void GivenTwoInchAndTwoPointFiveCentimeter_WhenEqualToThreeInch_ShouldReturnTrue()
+        {
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.INCHES, 2.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.CENTIMETER, 2.5);
+            Assert.AreEqual(3.0d, this.inchOne + this.inchTwo);
+        }
     }
 }
