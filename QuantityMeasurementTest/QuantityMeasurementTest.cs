@@ -213,7 +213,7 @@ namespace QuantityMeasurementTest
         // ************************************************YARD*******************************************************
 
         /// <summary>
-        /// Test Case 1.15 To Check Given Zero Feet is Equal Zero Yard.
+        /// Test Case 2.1 To Check Given Zero Feet is Equal Zero Yard.
         /// </summary>
          [Test]
          public void GivenZeroFeetAndZeroYard_WhenEqual_ShouldReturnTrue()
@@ -224,7 +224,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test Case 1.15 To Check Given One Feet is equal To Zero Yard.
+        /// Test Case 2.1 To Check Given One Feet is equal To Zero Yard.
         /// </summary>
          [Test]
          public void GivenOneFeetAndZeroYard_WhenNotEqual_ShouldReturnTrue()
@@ -232,6 +232,17 @@ namespace QuantityMeasurementTest
             this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 1.0);
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 0.0);
             Assert.AreNotEqual(this.inchOne, this.inchTwo);
+        }
+
+        /// <summary>
+        /// Test Case 2.2 To Check Given Three Feet is equal To One Yard.
+        /// </summary>
+         [Test]
+         public void GivenThreeFeetAndOneYard_WhenEqual_ShouldReturnTrue()
+        {
+            this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.FEET, 3.0);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.LengthTypeEnum.LengthType.YARD, 1.0);
+            Assert.AreEqual(this.inchOne, this.inchTwo);
         }
     }
 }
