@@ -23,6 +23,17 @@ namespace QuantityMeasurement
         }
 
         /// <summary>
+        /// Addition Of Two Units.
+        /// </summary>
+        /// <param name="uintOne"></param>
+        /// <param name="unitTwo"></param>
+        /// <returns></returns>
+        public double Add(double uintOne, double unitTwo)
+        {
+            return uintOne + unitTwo;
+        }
+
+        /// <summary>
         /// Overridding Equals Method.
         /// </summary>
         /// <param name="obj"></param>

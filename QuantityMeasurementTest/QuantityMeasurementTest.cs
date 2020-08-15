@@ -346,7 +346,9 @@ namespace QuantityMeasurementTest
          public void GivenTwoInchAndTwoInch_WhenEqualToFourInch_ShouldReturnTrue()
         {
             this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
-            Assert.AreEqual(4.0d, this.inchOne + this.inchOne);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
+            double finalResult = this.quantityMeasurement.Add(this.inchOne, this.inchTwo);
+            Assert.AreEqual(4.0d, finalResult);
         }
 
         /// <summary>
@@ -357,7 +359,8 @@ namespace QuantityMeasurementTest
         {
             this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
-            Assert.AreEqual(14.0d, this.inchOne + this.inchTwo);
+            double finalResult = this.quantityMeasurement.Add(this.inchOne, this.inchTwo);
+            Assert.AreEqual(14.0d, finalResult);
         }
 
         /// <summary>
@@ -367,7 +370,9 @@ namespace QuantityMeasurementTest
          public void GivenOneFeetAndOneFeet_WhenEqualToTwentyFourInch_ShouldReturnTrue()
         {
             this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
-            Assert.AreEqual(24.0d, this.inchOne + this.inchOne);
+            this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
+            double finalResult = this.quantityMeasurement.Add(this.inchOne, this.inchTwo);
+            Assert.AreEqual(24.0d, finalResult);
         }
 
         /// <summary>
@@ -378,7 +383,8 @@ namespace QuantityMeasurementTest
         {
             this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.CENTIMETER, 2.5);
-            Assert.AreEqual(3.0d, this.inchOne + this.inchTwo);
+            double finalResult = this.quantityMeasurement.Add(this.inchOne, this.inchTwo);
+            Assert.AreEqual(3.0d, finalResult);
         }
 
         // ++++++++++++++++++++++++++++++++++++++++++++++++Volume+++++++++++++++++++++++++++++++++++++++++++++++++++++++
