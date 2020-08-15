@@ -25,8 +25,11 @@ namespace QuantityMeasurement
             CENTIMETER,
             GALLON,
             LITRE,
-            MILLILITRE
-        }
+            MILLILITRE,
+            KILOGRAM,
+            GRAM,
+            TONNE
+    }
 
         /// <summary>
         /// Unit Conversion Method.
@@ -42,17 +45,17 @@ namespace QuantityMeasurement
 
             if (type.Equals(UnitType.YARD))
             {
-                return 1 * 36.0;
+                return 1.0 * 36.0;
             }
 
             if (type.Equals(UnitType.CENTIMETER))
             {
-                return 1 / 2.5;
+                return 1.0 / 2.5;
             }
 
             if (type.Equals(UnitType.GALLON))
             {
-                return 1 * 3.785;
+                return 1.0 * 3.785;
             }
 
             if (type.Equals(UnitType.LITRE))
@@ -63,6 +66,21 @@ namespace QuantityMeasurement
             if (type.Equals(UnitType.MILLILITRE))
             {
                 return 1.0 / 1000.0;
+            }
+
+            if (type.Equals(UnitType.KILOGRAM))
+            {
+                return 1.0;
+            }
+
+            if (type.Equals(UnitType.GRAM))
+            {
+                return 1.0 / 1000.0;
+            }
+
+            if (type.Equals(UnitType.TONNE))
+            {
+                return 1.0 * 1000.0;
             }
             else
             {
