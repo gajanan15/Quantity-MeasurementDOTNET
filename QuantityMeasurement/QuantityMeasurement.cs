@@ -19,6 +19,11 @@ namespace QuantityMeasurement
         /// <returns></returns>
         public double ReturnUnits(UnitTypeEnum.UnitType type, double unit)
         {
+            if (type.Equals(UnitTypeEnum.UnitType.CELSIUS))
+            {
+                return (unit * new UnitTypeEnum().Conversion(type)) + 32;
+            }
+
             return unit * new UnitTypeEnum().Conversion(type);
         }
 
@@ -28,7 +33,7 @@ namespace QuantityMeasurement
         /// <param name="uintOne"></param>
         /// <param name="unitTwo"></param>
         /// <returns></returns>
-        public double Add(double uintOne, double unitTwo)
+        public double AddConversion(double uintOne, double unitTwo)
         {
             return uintOne + unitTwo;
         }

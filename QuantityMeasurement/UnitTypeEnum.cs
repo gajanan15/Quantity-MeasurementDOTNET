@@ -28,8 +28,10 @@ namespace QuantityMeasurement
             MILLILITRE,
             KILOGRAM,
             GRAM,
-            TONNE
-    }
+            TONNE,
+            FAHRENHEIT,
+            CELSIUS
+        }
 
         /// <summary>
         /// Unit Conversion Method.
@@ -81,6 +83,16 @@ namespace QuantityMeasurement
             if (type.Equals(UnitType.TONNE))
             {
                 return 1.0 * 1000.0;
+            }
+
+            if (type.Equals(UnitType.CELSIUS))
+            {
+                return 1.8;
+            }
+
+            if (type.Equals(UnitType.FAHRENHEIT))
+            {
+                return 1.0;
             }
             else
             {

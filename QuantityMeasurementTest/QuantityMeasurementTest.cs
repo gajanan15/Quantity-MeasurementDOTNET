@@ -21,6 +21,8 @@ namespace QuantityMeasurementTest
          private double litreTwo;
          private double kilogramOne;
          private double kilogramTwo;
+         private double temperatureOne;
+         private double temperatureTwo;
 
         /// <summary>
         /// Craete SetUp Method.
@@ -349,8 +351,8 @@ namespace QuantityMeasurementTest
         {
             this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
-            double finalResult = this.quantityMeasurement.Add(this.inchOne, this.inchTwo);
-            Assert.AreEqual(4.0d, finalResult);
+            double finalResult = this.quantityMeasurement.AddConversion(this.inchOne, this.inchTwo);
+            Assert.AreEqual(4.0, finalResult);
         }
 
         /// <summary>
@@ -361,8 +363,8 @@ namespace QuantityMeasurementTest
         {
             this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
-            double finalResult = this.quantityMeasurement.Add(this.inchOne, this.inchTwo);
-            Assert.AreEqual(14.0d, finalResult);
+            double finalResult = this.quantityMeasurement.AddConversion(this.inchOne, this.inchTwo);
+            Assert.AreEqual(14.0, finalResult);
         }
 
         /// <summary>
@@ -373,8 +375,8 @@ namespace QuantityMeasurementTest
         {
             this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FEET, 1.0);
-            double finalResult = this.quantityMeasurement.Add(this.inchOne, this.inchTwo);
-            Assert.AreEqual(24.0d, finalResult);
+            double finalResult = this.quantityMeasurement.AddConversion(this.inchOne, this.inchTwo);
+            Assert.AreEqual(24.0, finalResult);
         }
 
         /// <summary>
@@ -385,8 +387,8 @@ namespace QuantityMeasurementTest
         {
             this.inchOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.INCHES, 2.0);
             this.inchTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.CENTIMETER, 2.5);
-            double finalResult = this.quantityMeasurement.Add(this.inchOne, this.inchTwo);
-            Assert.AreEqual(3.0d, finalResult);
+            double finalResult = this.quantityMeasurement.AddConversion(this.inchOne, this.inchTwo);
+            Assert.AreEqual(3.0, finalResult);
         }
 
         // ++++++++++++++++++++++++++++++++++++++++++++++++Volume+++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -456,7 +458,7 @@ namespace QuantityMeasurementTest
         {
             this.litreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 1.0);
             this.litreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 3.785);
-            double finalResult = this.quantityMeasurement.Add(this.litreOne, this.litreTwo);
+            double finalResult = this.quantityMeasurement.AddConversion(this.litreOne, this.litreTwo);
             Assert.AreEqual(7.57, finalResult);
         }
 
@@ -468,14 +470,14 @@ namespace QuantityMeasurementTest
         {
             this.litreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 1.0);
             this.litreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.MILLILITRE, 1000.0);
-            double finalResult = this.quantityMeasurement.Add(this.litreOne, this.litreTwo);
+            double finalResult = this.quantityMeasurement.AddConversion(this.litreOne, this.litreTwo);
             Assert.AreEqual(2.0, finalResult);
         }
 
         // ++++++++++++++++++++++++++++++++++++++++++++++++Weight+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         /// <summary>
-        /// Test Case 6.1 To Check Given One Kilogram is Equal To Thousand Gram.
+        /// Test Case 7.1 To Check Given One Kilogram is Equal To Thousand Gram.
         /// </summary>
          [Test]
          public void GivenOneKilogramAndThousandGram_WhenEqual_ShouldReturnTrue()
@@ -486,7 +488,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test Case 6.2 To Check Given One Tonne is Equal To Thousand Kilogram.
+        /// Test Case 7.2 To Check Given One Tonne is Equal To Thousand Kilogram.
         /// </summary>
          [Test]
          public void GivenOneTonneAndThousandKilogram_WhenEqual_ShouldReturnTrue()
@@ -497,15 +499,28 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test Case 6.3 Convert To Kilogram Given One Tonne And Thousand Gram Is Equal To One Thousand One Kilogram.
+        /// Test Case 7.3 Convert To Kilogram Given One Tonne And Thousand Gram Is Equal To One Thousand One Kilogram.
         /// </summary>
          [Test]
          public void GivenOneTonneAndThousandGram_WhenEqualToOneThousandOneKilogram_ShouldReturnTrue()
         {
             this.kilogramOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.TONNE, 1.0);
             this.kilogramTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GRAM, 1000.0);
-            double finalResult = this.quantityMeasurement.Add(this.kilogramOne, this.kilogramTwo);
+            double finalResult = this.quantityMeasurement.AddConversion(this.kilogramOne, this.kilogramTwo);
             Assert.AreEqual(1001.0, finalResult);
+        }
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++Temperature+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        /// <summary>
+        /// Test Case 8 To Check Given 212 Fahrenheit is Equal To 100 Celsius.
+        /// </summary>
+         [Test]
+         public void GivenTwoHundredAndTwelveFahrenheitAndHundredCelsius_WhenEqual_ShouldReturnTrue()
+        {
+            this.temperatureOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.FAHRENHEIT, 212.0);
+            this.temperatureTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.CELSIUS, 100.0);
+            Assert.AreEqual(this.temperatureOne, this.temperatureTwo);
         }
     }
 }
