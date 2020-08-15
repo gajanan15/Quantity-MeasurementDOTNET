@@ -52,17 +52,17 @@ namespace QuantityMeasurement
 
             if (type.Equals(UnitType.GALLON))
             {
-                return 1 * 3785;
+                return 1 * 3.785;
             }
 
             if (type.Equals(UnitType.LITRE))
             {
-                return 1 * 1000;
+                return 1.0;
             }
 
             if (type.Equals(UnitType.MILLILITRE))
             {
-                return 1.0;
+                return 1.0 / 1000.0;
             }
             else
             {

@@ -17,8 +17,8 @@ namespace QuantityMeasurementTest
          private QuantityMeasurement.QuantityMeasurement quantityMeasurement;
          private double inchOne;
          private double inchTwo;
-         private double millilitreOne;
-         private double millilitreTwo;
+         private double litreOne;
+         private double litreTwo;
 
         /// <summary>
         /// Craete SetUp Method.
@@ -389,17 +389,15 @@ namespace QuantityMeasurementTest
 
         // ++++++++++++++++++++++++++++++++++++++++++++++++Volume+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        // ************************************************Gallon*******************************************************
-
         /// <summary>
         /// Test Case 5.1 To Check Given Zero Gallon is Equal To Zero Gallon.
         /// </summary>
          [Test]
          public void GivenZeroGallonAndZeroGallon_WhenEqual_ShouldReturnTrue()
         {
-            this.millilitreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
-            this.millilitreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
-            Assert.AreEqual(this.millilitreOne, this.millilitreTwo);
+            this.litreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
+            this.litreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
+            Assert.AreEqual(this.litreOne, this.litreTwo);
         }
 
         /// <summary>
@@ -408,9 +406,9 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenZeroGallonAndZeroLitre_WhenEqual_ShouldReturnTrue()
         {
-            this.millilitreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
-            this.millilitreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 0.0);
-            Assert.AreEqual(this.millilitreOne, this.millilitreTwo);
+            this.litreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
+            this.litreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 0.0);
+            Assert.AreEqual(this.litreOne, this.litreTwo);
         }
 
         /// <summary>
@@ -419,9 +417,9 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenZeroGallonAndOneLitre_WhenNotEqual_ShouldReturnTrue()
         {
-            this.millilitreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
-            this.millilitreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 1.0);
-            Assert.AreNotEqual(this.millilitreOne, this.millilitreTwo);
+            this.litreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 0.0);
+            this.litreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 1.0);
+            Assert.AreNotEqual(this.litreOne, this.litreTwo);
         }
 
         /// <summary>
@@ -430,9 +428,9 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneGallonAndThreePoinSeventyEightLitre_WhenEqual_ShouldReturnTrue()
         {
-            this.millilitreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 1.0);
-            this.millilitreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 3.785);
-            Assert.AreEqual(this.millilitreOne, this.millilitreTwo);
+            this.litreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 1.0);
+            this.litreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 3.785);
+            Assert.AreEqual(this.litreOne, this.litreTwo);
         }
 
         /// <summary>
@@ -441,9 +439,35 @@ namespace QuantityMeasurementTest
          [Test]
          public void GivenOneLitreAndThousandMillilitre_WhenEqual_ShouldReturnTrue()
         {
-            this.millilitreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 1.0);
-            this.millilitreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.MILLILITRE, 1000.0);
-            Assert.AreEqual(this.millilitreOne, this.millilitreTwo);
+            this.litreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 1.0);
+            this.litreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.MILLILITRE, 1000.0);
+            Assert.AreEqual(this.litreOne, this.litreTwo);
+        }
+
+        // ************************************************Add Volumes In Litres*******************************************************
+
+        /// <summary>
+        /// Test Case 6.1 Convert To Litre One Gallon And Three Point Seventy Eight Litre Is Equal To Seven Point Fifty Seven Litre.
+        /// </summary>
+         [Test]
+         public void GivenOneGallonAndThreePointSeventyEightLitre_WhenEqualToSevenPointFiftySevenLitre_ShouldReturnTrue()
+        {
+            this.litreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.GALLON, 1.0);
+            this.litreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 3.785);
+            double finalResult = this.quantityMeasurement.Add(this.litreOne, this.litreTwo);
+            Assert.AreEqual(7.57, finalResult);
+        }
+
+        /// <summary>
+        /// Test Case 6.2 Convert To Litre Given One Litre And Thousand Millilitre Is Equal To Two Litre.
+        /// </summary>
+         [Test]
+         public void GivenOneLitreAndThousandMillilitre_WhenEqualToTwoLitre_ShouldReturnTrue()
+        {
+            this.litreOne = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.LITRE, 1.0);
+            this.litreTwo = this.quantityMeasurement.ReturnUnits(QuantityMeasurement.UnitTypeEnum.UnitType.MILLILITRE, 1000.0);
+            double finalResult = this.quantityMeasurement.Add(this.litreOne, this.litreTwo);
+            Assert.AreEqual(2.0, finalResult);
         }
     }
 }
